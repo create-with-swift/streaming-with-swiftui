@@ -2,7 +2,7 @@
 //  VideoPlayerView.swift
 //  VideoPlayerView
 //
-//  Created by Moritz Philip Recke on 19.02.21.
+//  Created by Moritz Philip Recke on 19.02.21 for createwithswift.com.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  VideoPlayerVM.swift
 //  StreamingApp
 //
-//  Created by Moritz Philip Recke on 26.10.21.
+//  Created by Moritz Philip Recke on 26.10.21 for createwithswift.com.
 //
 
 import Foundation
