@@ -10,18 +10,22 @@ import AVKit
 
 struct SimpleVideoPlayerView: View {
     private let player = AVPlayer(url: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-360p.m3u8")!)
-        
-        var body: some View {
-            VideoPlayer(player: player) {
+    
+    var body: some View {
+        VideoPlayer(player: player) {
+            VStack {
+                Spacer()
                 Text("Overlay")
                     .font(.subheadline)
                     .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             }
-                .onAppear() {
-                    player.play()
-                }
         }
+        .navigationTitle("Simple video player")
+        .onAppear() {
+            player.play()
+        }
+    }
 }
 
 struct SimpleVideoPlayerView_Previews: PreviewProvider {

@@ -14,37 +14,32 @@ struct Video {
 }
 
 struct Stream {
-    let resolution: String
+    let resolution: Resolution
     let streamURL: URL
 }
 
-
-//class NetworkMonitor {
-//
-//    let monitor = NWPathMonitor()
-//
-//    init() {
-//            monitor.pathUpdateHandler = { path in
-//                if path.status == .satisfied {
-//                    print("network is connected")
-//                    // Put your logic code
-//                    if path.usesInterfaceType(.wifi) {
-//                        print("It's WiFi!")
-//                    } else if path.usesInterfaceType(.cellular) {
-//                        print("It's Cellular!")
-//                    }
-//                    if path.isConstrained {
-//                        print("It's Constrained!")
-//                    }
-//
-//
-//                }else {
-//                   print("No connection.")
-//                   // Put your logic code
-//               }
-//            }
-//            let queue = DispatchQueue.global(qos: .background)
-//            monitor.start(queue: queue)
-//        }
-//
-//}
+enum Resolution: Int, Identifiable, Comparable, CaseIterable {
+    case p360 = 0
+    case p540
+    case p720
+    case p1080
+    
+    var id: Int { rawValue }
+    
+    var displayValue: String {
+        switch self {
+        case .p360: return "360p"
+        case .p540: return "540p"
+        case .p720: return "720p"
+        case .p1080: return "1080p"
+        }
+    }
+    
+    static func ==(lhs: Resolution, rhs: Resolution) -> Bool {
+        lhs.rawValue == rhs.rawValue
+    }
+    
+    static func <(lhs: Resolution, rhs: Resolution) -> Bool {
+        lhs.rawValue < rhs.rawValue
+    }
+}
