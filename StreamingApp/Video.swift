@@ -19,32 +19,32 @@ struct Stream {
 }
 
 
-class NetworkMonitor {
-    
-    let monitor = NWPathMonitor()
-    
-    init() {
-            monitor.pathUpdateHandler = { path in
-                if path.status == .satisfied {
-                    print("network is connected")
-                    // Put your logic code
-                    if path.usesInterfaceType(.wifi) {
-                        print("It's WiFi!")
-                    } else if path.usesInterfaceType(.cellular) {
-                        print("It's Cellular!")
-                    }
-                    if path.isConstrained {
-                        print("It's Constrained!")
-                    }
-         
-       
-                }else {
-                   print("No connection.")
-                   // Put your logic code
-               }
-            }
-            let queue = DispatchQueue.global(qos: .background)
-            monitor.start(queue: queue)
-        }
-    
-}
+//class NetworkMonitor {
+//
+//    let monitor = NWPathMonitor()
+//
+//    init() {
+//            monitor.pathUpdateHandler = { path in
+//                if path.status == .satisfied {
+//                    print("network is connected")
+//                    // Put your logic code
+//                    if path.usesInterfaceType(.wifi) {
+//                        print("It's WiFi!")
+//                    } else if path.usesInterfaceType(.cellular) {
+//                        print("It's Cellular!")
+//                    }
+//                    if path.isConstrained {
+//                        print("It's Constrained!")
+//                    }
+//
+//
+//                }else {
+//                   print("No connection.")
+//                   // Put your logic code
+//               }
+//            }
+//            let queue = DispatchQueue.global(qos: .background)
+//            monitor.start(queue: queue)
+//        }
+//
+//}
