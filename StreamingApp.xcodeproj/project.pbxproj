@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422A0DCB273D7240008D83B3 /* UIKitVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A0DCA273D7240008D83B3 /* UIKitVideoPlayerView.swift */; };
 		A909DA8E273ABF6A009530BF /* SimpleVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909DA8D273ABF6A009530BF /* SimpleVideoPlayerView.swift */; };
 		A909DA91273AC08C009530BF /* ManifestVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909DA90273AC08C009530BF /* ManifestVideoPlayerView.swift */; };
 		A98B930F2727FDDA005672FA /* VideoPlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B930E2727FDDA005672FA /* VideoPlayerVM.swift */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		422A0DC9273D7205008D83B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		422A0DCA273D7240008D83B3 /* UIKitVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitVideoPlayerView.swift; sourceTree = "<group>"; };
 		A909DA8D273ABF6A009530BF /* SimpleVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleVideoPlayerView.swift; sourceTree = "<group>"; };
 		A909DA90273AC08C009530BF /* ManifestVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestVideoPlayerView.swift; sourceTree = "<group>"; };
 		A98B930E2727FDDA005672FA /* VideoPlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVM.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 				A98D7E7027219C5700004BA1 /* BufferVideoPlayerView.swift */,
 				A909DA8D273ABF6A009530BF /* SimpleVideoPlayerView.swift */,
 				A909DA90273AC08C009530BF /* ManifestVideoPlayerView.swift */,
+				422A0DCA273D7240008D83B3 /* UIKitVideoPlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -69,6 +73,7 @@
 		A98D7E6D27219C5700004BA1 /* StreamingApp */ = {
 			isa = PBXGroup;
 			children = (
+				422A0DC9273D7205008D83B3 /* Info.plist */,
 				A909DA8F273ABFC6009530BF /* Views */,
 				A98D7E6E27219C5700004BA1 /* StreamingApp.swift */,
 				A98D7E7227219C5900004BA1 /* Assets.xcassets */,
@@ -158,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98D7E7127219C5700004BA1 /* BufferVideoPlayerView.swift in Sources */,
+				422A0DCB273D7240008D83B3 /* UIKitVideoPlayerView.swift in Sources */,
 				A909DA8E273ABF6A009530BF /* SimpleVideoPlayerView.swift in Sources */,
 				A98B930F2727FDDA005672FA /* VideoPlayerVM.swift in Sources */,
 				A98D7E7D27219FCD00004BA1 /* Video.swift in Sources */,
@@ -290,12 +296,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StreamingApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 5CH8N57WM4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StreamingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -320,12 +328,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StreamingApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 5CH8N57WM4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StreamingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

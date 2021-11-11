@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 @main
 struct StreamingApp: App {
@@ -24,6 +25,12 @@ struct StreamingApp: App {
                     NavigationLink("HLS manifest") {
                         ManifestVideoPlayerView()
                     }
+                    
+                    NavigationLink(destination: {
+                        UIKitVideoPlayerView()
+                    }, label: {
+                        (Text("PiP ") + Text("UIViewControllerRepresentable").font(.caption))
+                    })                    
                 }
                 .navigationBarTitle("StreamingApp")
             }

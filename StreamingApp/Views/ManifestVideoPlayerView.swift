@@ -6,10 +6,20 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ManifestVideoPlayerView: View {
+    private let player = AVPlayer(url: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-trailer.m3u8")!)
+        
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VideoPlayer(player: player)
+            .navigationTitle("HLS manifest")
+            .onAppear {
+                player.play()
+            }
+            .onDisappear {
+                player.pause()
+            }
     }
 }
 

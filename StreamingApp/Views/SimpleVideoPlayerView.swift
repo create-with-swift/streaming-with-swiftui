@@ -14,16 +14,19 @@ struct SimpleVideoPlayerView: View {
     var body: some View {
         VideoPlayer(player: player) {
             VStack {
-                Spacer()
                 Text("Overlay")
                     .font(.subheadline)
                     .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
             }
         }
         .navigationTitle("Simple video player")
         .onAppear() {
             player.play()
+        }
+        .onDisappear {
+            player.pause()
         }
     }
 }

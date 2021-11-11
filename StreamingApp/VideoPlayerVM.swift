@@ -43,12 +43,6 @@ final class VideoPlayerViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
-    deinit {
-        if let timeObserverToken = timeObserverToken {
-            player.removeTimeObserver(timeObserverToken)
-        }
-    }
-    
     private func setObserver() {
         if let timeObserverToken = timeObserverToken {
             player.removeTimeObserver(timeObserverToken)
@@ -85,5 +79,16 @@ final class VideoPlayerViewModel: ObservableObject {
         
         player.replaceCurrentItem(with: AVPlayerItem(url: stream.streamURL))
         player.seek(to: currentTime, toleranceBefore: .zero, toleranceAfter: .zero)
+    }
+}
+
+extension VideoPlayerViewModel {
+    static var `default`: Self {
+        .init(video: Video(name: "Promo Video", streams: [
+            Stream(resolution: .p360, streamURL: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-360p.m3u8")!),
+            Stream(resolution: .p540, streamURL: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-540p.m3u8")!),
+            Stream(resolution: .p720, streamURL: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-720p.m3u8")!),
+            Stream(resolution: .p1080, streamURL: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-1080p.m3u8")!)
+        ]), initialResolution: .p540)
     }
 }

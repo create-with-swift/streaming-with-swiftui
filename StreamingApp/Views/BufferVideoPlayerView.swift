@@ -10,12 +10,7 @@ import AVKit
 
 struct BufferVideoPlayerView: View {
     
-    @StateObject private var videoPlayerVM = VideoPlayerViewModel(video: Video(name: "Promo Video", streams: [
-        Stream(resolution: .p360, streamURL: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-360p.m3u8")!),
-        Stream(resolution: .p540, streamURL: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-540p.m3u8")!),
-        Stream(resolution: .p720, streamURL: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-720p.m3u8")!),
-        Stream(resolution: .p1080, streamURL: URL(string: "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-1080p.m3u8")!)
-    ]), initialResolution: .p540)
+    @StateObject private var videoPlayerVM = VideoPlayerViewModel.default
  
     @State private var showResolutions = false
     
@@ -36,9 +31,11 @@ struct BufferVideoPlayerView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         .padding(8)
                 }
-                .frame(height: 220)
                 .onAppear() {
                     videoPlayerVM.player.play()
+                }
+                .onDisappear {
+                    videoPlayerVM.player.pause()
                 }
             }
             .padding()
