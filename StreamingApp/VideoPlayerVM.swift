@@ -43,12 +43,18 @@ final class VideoPlayerViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
+    deinit {
+        if let timeObserverToken = timeObserverToken {
+            player.removeTimeObserver(timeObserverToken)
+        }
+    }
+    
     private func setObserver() {
         if let timeObserverToken = timeObserverToken {
             player.removeTimeObserver(timeObserverToken)
         }
         
-        player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 600), queue: DispatchQueue.main, using: { [weak self] time in
+        timeObserverToken = player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 600), queue: DispatchQueue.main, using: { [weak self] time in
             guard let self = self,
                   let currentItem = self.player.currentItem else { return }
             
