@@ -1,2 +1,2 @@
-# streaming-with-swiftui
-A simple demo app to showcase streaming HLS with SwiftUI Videoplayer
+# HLS Streaming with SwiftUI
+Basic implementation of VideoPlayer for SwiftUI to play remote media files using HTTP Live Streaming (HLS). Multiple views provide different implementations, ranging a simple player implementation to a more advanced setup with a view model that continiously monitors the playback buffer using AVPlayer's AVPlayerItem through use of Combine and Observers. More information about HLS streaming can be fond on Apple"s website https://developer.apple.com/streaming/. 
